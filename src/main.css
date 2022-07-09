@@ -1,1 +1,143 @@
-/*# sourceMappingURL=main.css.map */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+body.show {
+  background-color: #20b2aa;
+}
+body .board {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  background-color: #20b2aa;
+}
+body .board.show {
+  display: none;
+  background-color: #20b2aa;
+}
+body .board.x .cell:not(.x):not(.circle):hover::before {
+  content: "";
+  position: absolute;
+  background-color: lightgrey;
+  width: 10px;
+  height: 90px;
+  transform: rotate(45deg);
+}
+body .board.x .cell:not(.x):not(.circle):hover::after {
+  content: "";
+  position: absolute;
+  background-color: lightgrey;
+  width: 10px;
+  height: 90px;
+  transform: rotate(-45deg);
+}
+body .board.circle .cell:not(.x):not(.circle):hover::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  background-color: lightgrey;
+}
+body .board.circle .cell:not(.x):not(.circle):hover::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  background-color: #20b2aa;
+}
+body .board .cell {
+  width: 100px;
+  height: 100px;
+  border: 3px solid black;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+body .board .cell:first-child, body .board .cell:nth-child(2), body .board .cell:nth-child(3) {
+  border-top: none;
+}
+body .board .cell:nth-child(3n+1) {
+  border-left: none;
+}
+body .board .cell:nth-child(3n+3) {
+  border-right: none;
+}
+body .board .cell:nth-child(7), body .board .cell:nth-child(8), body .board .cell:nth-child(9) {
+  border-bottom: none;
+}
+body .board .cell.x::before, body .board .cell.x::after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  width: 10px;
+  height: 90px;
+}
+body .board .cell.x::before {
+  transform: rotate(45deg);
+}
+body .board .cell.x::after {
+  transform: rotate(-45deg);
+}
+body .board .cell.circle::before, body .board .cell.circle::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+body .board .cell.circle::before {
+  width: 80px;
+  height: 80px;
+  background-color: black;
+}
+body .board .cell.circle::after {
+  width: 60px;
+  height: 60px;
+  background-color: #20b2aa;
+}
+body .board .cell.x, body .board .cell.circle {
+  cursor: not-allowed;
+}
+body .winning-message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 6rem;
+  flex-direction: column;
+  display: none;
+}
+body .winning-message.show {
+  display: flex;
+}
+body .winning-message button {
+  font-size: 3rem;
+  background-color: white;
+  border: 2px solid rgba(0, 0, 0, 0);
+  padding: 0.25em 0.5em;
+  margin-left: 0.5em;
+  cursor: pointer;
+}
+body .winning-message button:hover {
+  color: white;
+  border-color: rgba(0, 0, 0, 0);
+  background-color: #b22222;
+}/*# sourceMappingURL=main.css.map */
