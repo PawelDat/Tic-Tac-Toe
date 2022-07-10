@@ -17,6 +17,6 @@ Project is created with:
 To run this project, install it locally using:
 
 ```
-$ git clone git@github.com:PawelDat/Calculator.git
+$ git clone git@github.com:PawelDat/Tic-Tac-Toe.git
 
 
